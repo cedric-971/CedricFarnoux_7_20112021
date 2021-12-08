@@ -5,7 +5,7 @@ const app = express();
 const dotenv = require("dotenv").config();
 const { Sequelize } = require('sequelize');
 const db = require('./models');
-
+const messageRoutes = require('./routes/message')
 
 //connection base de donnée
 
@@ -40,5 +40,6 @@ app.use(express.urlencoded({extended : true}));
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.use('/api/user', userRoutes);
+app.use('/api/message',messageRoutes);
 db.sequelize.sync()
 module.exports = app;

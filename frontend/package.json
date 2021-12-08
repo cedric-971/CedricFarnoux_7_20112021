@@ -1,0 +1,19 @@
+{
+  "name": "groupo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./main.scss:./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cedric-971/CedricFarnoux_7_20112021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cedric-971/CedricFarnoux_7_20112021/issues"
+  },
+  "homepage": "https://github.com/cedric-971/CedricFarnoux_7_20112021#readme",
+  "description": ""
+}

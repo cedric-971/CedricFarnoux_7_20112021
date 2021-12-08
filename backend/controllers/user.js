@@ -3,6 +3,8 @@ const jwt = require("jsonwebtoken");
 //const { json } = require("sequelize/types");
 
 const models = require("../models");
+const User = models.user;
+
 
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const passwordRegex = /^(?=.*\d).{4,8}$/;
@@ -97,12 +99,39 @@ login: function (req, res, next)  {
   })
 .catch(function(err){
   return res.status(500).json({'error':'unable to verify user'});
+
 })
 
 },
 
-getUserProfile: function(req, res){
-  
+getOneUser: function(req, res){
+
+ 
+
+models.User.findOne({
+    attributes: [ 'id','email','username'],
+    where: {id : req.params.id}
+  })
+    .then((function(user) {
+      if (user){
+        res.status(201).json(user);
+
+      }else{
+
+        res.status(404).json({'error':'user not found' });
+      
+      }
+     }))
+    
+
+    .catch(function (err) {
+      res.status(500).json({'error': 'cannot fetch user'});
+      
+    })
+    
+    
+
 }
+
 
 }

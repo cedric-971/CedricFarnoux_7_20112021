@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groupomania</title>
+    <script
+      src="https://kit.fontawesome.com/1f33890b28.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <div class="nav-container">
+          <div id="logo">
+            <img src="./images/icon-left-font.png" alt="logo" class="logo" />
+          </div>
+          <ul class = "nav-bar">
+            <router-link to="/signup">
+              <li>signup</li>
+            </router-link>
+            <router-link to ="/login">
+              <li>login</li>
+            </router-link>
+
+          </ul>
+        </div>
+      </nav>
+
+ 
+
+      <router-view></router-view>
+      <script type="text/x-template" id="signup">
+        <div class="login-container">
+      
+          <input type="text"class ="input-login" placeholder="   e-mail "><br>
+          <input type="text"class ="input-login" placeholder="   username "><br>
+          <input type="text"class ="input-login"placeholder="    password ">
+        
+            <h2>Créer un compte</h2>
+      
+        </div>
+      </script>
+    </div>
+<script type="text/x-template" id="login">
+  <div class="login-container">
+
+    <input type="text"class ="input-login" placeholder="   e-mail "><br>
+    <input type="text"class ="input-login"placeholder="    password ">
+      <h1>Se connecter</h1>
+  
+
+  </div>
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="vue.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

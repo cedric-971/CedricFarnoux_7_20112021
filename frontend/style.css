@@ -1,0 +1,82 @@
+.nav-container {
+  height: 15%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+.nav-container #logo {
+  height: 15%;
+}
+.nav-container #logo .logo {
+  width: 200px;
+  display: flex;
+  height: 140px;
+}
+.nav-container .nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 400px;
+  margin-right: 40px;
+  margin-top: 60px;
+  list-style-type: none;
+}
+.nav-container .nav-bar li {
+  margin-left: 40px;
+  font-size: 20px;
+  color: #c55860;
+  text-decoration-color: white;
+}
+
+body {
+  height: 100%;
+  background-color: #c55860;
+}
+
+.login-container {
+  border: black solid 2px;
+  border-radius: 20px;
+  width: 250px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  width: 400px;
+  height: 40%;
+  background-color: #c7c6c6;
+}
+.login-container .input-login {
+  border: black solid 2px;
+  border-radius: 10px;
+  height: 50px;
+}
+.login-container h1 {
+  border: black solid 2px;
+  border-radius: 10px;
+  color: white;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin: auto;
+  background-color: #c55860;
+}
+.login-container h2 {
+  border: black solid 2px;
+  border-radius: 10px;
+  color: white;
+  margin: auto;
+  margin-top: 30px;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: #c55860;
+}
+
+/*# sourceMappingURL=style.css.map */
