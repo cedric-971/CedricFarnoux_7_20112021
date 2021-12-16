@@ -6,7 +6,7 @@ const dotenv = require("dotenv").config();
 const { Sequelize } = require('sequelize');
 const db = require('./models');
 const messageRoutes = require('./routes/message')
-
+const likeRoutes = require('./routes/like')
 //connection base de donnée
 
 const sequelize = new Sequelize("database_development", "root", "Farnoux22061980", {
@@ -41,5 +41,6 @@ app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.use('/api/user', userRoutes);
 app.use('/api/message',messageRoutes);
-db.sequelize.sync()
+app.use('/api/message',likeRoutes)
+db.sequelize.sync();
 module.exports = app;

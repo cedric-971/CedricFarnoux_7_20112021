@@ -2,35 +2,32 @@
 
 module.exports = (sequelize, DataTypes) => {
 const Message = sequelize.define('Message',{
+
+    //userId : DataTypes.INTEGER,
+    title: DataTypes.STRING,
+    content: DataTypes.STRING,
+    attachment: DataTypes.STRING,
+    likes: DataTypes.INTEGER
+
   
-  title: {type: DataTypes.STRING
-  },
-  content: { type: DataTypes.STRING
-  },
-  attachment: { type: DataTypes.STRING
-  },
-  likes: { type: DataTypes.INTEGER
-  }
 
-},{
+}
+);
 
-
-classMethods:{
-
-
-
-    associate : function(models){
-
-    
-      models.Message.belongsTo(models.User,{
-        foreignKey:{
+  
+    Message.associate = models =>{
+      // associations can be defined here
+      
+      Message.belongsTo(models.User, {
+        foreignKey: {
           allowNull: false
         }
+          
+        
       })
-
     }
-  }
+   
 
-  });
-  return Message;
+return Message;
+
 };

@@ -1,30 +1,24 @@
+'use strict';
 
 
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define("User", {
+  const User = sequelize.define('User', {
+
     
-   
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    isAdmin: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
-    }
-    
-    
-  });
+    email: DataTypes.STRING,
+    username: DataTypes.STRING,
+    password: DataTypes.STRING,
+    isAdmin: DataTypes.BOOLEAN
+  
+  }, 
+  )  
+      User.associate = models => {
+        // associations can be defined here
+        User.hasMany(models.Message,{
+        onDelete : "cascade"
+       });
+      }
     
   
- 
   return User;
 };
