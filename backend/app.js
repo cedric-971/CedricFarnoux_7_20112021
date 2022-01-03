@@ -7,6 +7,7 @@ const { Sequelize } = require('sequelize');
 const db = require('./models');
 const messageRoutes = require('./routes/message')
 const likeRoutes = require('./routes/like')
+const commentRoutes = require('./routes/comment');
 //connection base de donnée
 
 const sequelize = new Sequelize("database_development", "root", "Farnoux22061980", {
@@ -42,5 +43,6 @@ app.use("/images", express.static(path.join(__dirname, "images")));
 app.use('/api/user', userRoutes);
 app.use('/api/message',messageRoutes);
 app.use('/api/message',likeRoutes)
+app.use('/api/comment',commentRoutes)
 db.sequelize.sync();
 module.exports = app;
